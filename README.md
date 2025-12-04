@@ -1,5 +1,3 @@
-```markdown
-<div align="center">
 
 # 🔬 Force-Displacement Hysteresis Curve Analysis Tool
 
@@ -63,14 +61,14 @@ This application is designed for researchers, engineers, and students working wi
 
 ### 📊 Data Analysis Features
 
-| Feature | Description |
-|---------|-------------|
-| **Hysteresis Loop Extraction** | Automatically identifies and separates individual loading cycles from continuous test data |
-| **Skeleton Curve Generation** | Two methods: (1) Outer envelope tracing, (2) Peak point connection |
-| **Direction-specific Analysis** | Analyze positive direction, negative direction, or both simultaneously |
-| **Data Filtering** | Option to retain only the first loop at each displacement level (useful for repeated cycles) |
-| **Peak Detection** | Automatic identification of local maxima and minima |
-| **Starting Point Identification** | Intelligent detection of skeleton curve origin points |
+| Feature                           | Description                                                  |
+| --------------------------------- | ------------------------------------------------------------ |
+| **Hysteresis Loop Extraction**    | Automatically identifies and separates individual loading cycles from continuous test data |
+| **Skeleton Curve Generation**     | Two methods: (1) Outer envelope tracing, (2) Peak point connection |
+| **Direction-specific Analysis**   | Analyze positive direction, negative direction, or both simultaneously |
+| **Data Filtering**                | Option to retain only the first loop at each displacement level (useful for repeated cycles) |
+| **Peak Detection**                | Automatic identification of local maxima and minima          |
+| **Starting Point Identification** | Intelligent detection of skeleton curve origin points        |
 
 ### 📈 Visualization Features
 
@@ -135,15 +133,15 @@ This application is designed for researchers, engineers, and students working wi
 
 Seven internationally recognized methods:
 
-| Method | Description | Application |
-|--------|-------------|-------------|
-| **Geometric Method** | Based on 75% of peak force | General structural analysis |
-| **Energy Method** | Based on energy dissipation | Energy-based design |
-| **Park Method** | Stiffness-based degradation criterion | Seismic design (Park & Ang) |
-| **Farthest Point** | Maximum distance from peak line | Conservative estimates |
-| **ASCE Method** | 60% of peak force criterion | US seismic codes |
-| **EEEP** (Equivalent Energy) | Energy equivalence principle | Performance-based design |
-| **Elastic Yield** | Initial stiffness intersection | Traditional yield point definition |
+| Method                       | Description                           | Application                        |
+| ---------------------------- | ------------------------------------- | ---------------------------------- |
+| **Geometric Method**         | Based on 75% of peak force            | General structural analysis        |
+| **Energy Method**            | Based on energy dissipation           | Energy-based design                |
+| **Park Method**              | Stiffness-based degradation criterion | Seismic design (Park & Ang)        |
+| **Farthest Point**           | Maximum distance from peak line       | Conservative estimates             |
+| **ASCE Method**              | 60% of peak force criterion           | US seismic codes                   |
+| **EEEP** (Equivalent Energy) | Energy equivalence principle          | Performance-based design           |
+| **Elastic Yield**            | Initial stiffness intersection        | Traditional yield point definition |
 
 ### 🌍 Multi-language Support
 
@@ -207,14 +205,14 @@ Three detailed output tabs:
 
 ### Required Python Packages
 
-| Package | Version | Purpose |
-|---------|---------|---------|
-| numpy | ≥1.19.0 | Numerical computations |
-| pandas | ≥1.1.0 | Data manipulation |
-| PySide6 | ≥6.0.0 | GUI framework |
-| matplotlib | ≥3.3.0 | Plotting and visualization |
-| scipy | ≥1.5.0 | Scientific computing and interpolation |
-| openpyxl | ≥3.0.0 | Excel file support |
+| Package    | Version | Purpose                                |
+| ---------- | ------- | -------------------------------------- |
+| numpy      | ≥1.19.0 | Numerical computations                 |
+| pandas     | ≥1.1.0  | Data manipulation                      |
+| PySide6    | ≥6.0.0  | GUI framework                          |
+| matplotlib | ≥3.3.0  | Plotting and visualization             |
+| scipy      | ≥1.5.0  | Scientific computing and interpolation |
+| openpyxl   | ≥3.0.0  | Excel file support                     |
 
 ---
 
