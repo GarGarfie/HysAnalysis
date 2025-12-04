@@ -9,7 +9,7 @@
 
 [![English](https://img.shields.io/badge/🇺🇸_English-Click-blue?style=for-the-badge)](README.md)
 [![简体中文](https://img.shields.io/badge/🇨🇳_简体中文-点击-red?style=for-the-badge)](README.zh-CN.md)
-[![Русский](https://img.shields.io/badge/🇷🇺_Русский-Нажмите-orange?style=for-the-badge)](README.ru.md)
+[![Русский](https://img.shields.io/badge/🇷🇺_Русский-Нажмите-Yellow?style=for-the-badge)](README.ru.md)
 
 *A comprehensive desktop application for analyzing force-displacement hysteresis curves from structural cyclic loading tests*
 
