@@ -219,8 +219,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Peak displacement': 'Peak displacement',
                 'Residual deformation (mm)': 'Residual deformation (mm)',
                 'Peak load': 'Peak load',
-                'Initial stiffness (kN/mm)': 'Initial stiffness (kN/mm)',
-                'Secant stiffness (kN/mm)': 'Secant stiffness (kN/mm)',
+                'Initial stiffness (N/mm)': 'Initial stiffness (N/mm)',
+                'Secant stiffness (N/mm)': 'Secant stiffness (N/mm)',
                 'Total hysteresis loop area (kN·mm)': 'Total hysteresis loop area (kN·mm)',
                 'Cumulative energy dissipation (kN·mm)': 'Cumulative energy dissipation (kN·mm)',
                 'Average loop energy (kN·mm)': 'Average loop energy (kN·mm)',
@@ -231,8 +231,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Stiffness degradation (%)': 'Stiffness degradation (%)',
                 'Positive (mm)': 'Positive (mm)',
                 'Negative (mm)': 'Negative (mm)',
-                'Positive (kN)': 'Positive (kN)',
-                'Negative (kN)': 'Negative (kN)',
+                'Positive (N)': 'Positive (N)',
+                'Negative (N)': 'Negative (N)',
                 
                 # 滞回环详细信息翻译
                 'No hysteresis loop information': 'No hysteresis loop information',
@@ -318,7 +318,7 @@ class HysteresisAnalyzer(QMainWindow):
                 'Failed to generate Bézier curve': 'Не удалось сгенерировать кривую Безье',
                 'Smoothing failed': 'Сглаживание не удалось',
                 'Displacement (mm)': 'Перемещение (мм)',
-                'Force (N)': 'Сила (кН)',
+                'Force (N)': 'Сила (Н)',
                 'Force-Displacement Hysteresis Curve': 'Кривая гистерезиса сила-перемещение',
                 'Hysteresis Curve': 'Кривая гистерезиса',
                 'Positive Skeleton Curve': 'Положительная скелетная кривая',
@@ -368,8 +368,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Peak displacement': 'Пиковое перемещение',
                 'Residual deformation (mm)': 'Остаточная деформация (мм)',
                 'Peak load': 'Пиковая нагрузка',
-                'Initial stiffness (kN/mm)': 'Начальная жёсткость (кН/мм)',
-                'Secant stiffness (kN/mm)': 'Секущая жёсткость (кН/мм)',
+                'Initial stiffness (N/mm)': 'Начальная жёсткость (Н/мм)',
+                'Secant stiffness (k/mm)': 'Секущая жёсткость (Н/мм)',
                 'Total hysteresis loop area (kN·mm)': 'Общая площадь петель гистерезиса (кН·мм)',
                 'Cumulative energy dissipation (kN·mm)': 'Суммарное рассеяние энергии (кН·мм)',
                 'Average loop energy (kN·mm)': 'Средняя энергия петли (кН·мм)',
@@ -380,8 +380,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Stiffness degradation (%)': 'Деградация жёсткости (%)',
                 'Positive (mm)': 'Положительное (мм)',
                 'Negative (mm)': 'Отрицательное (мм)',
-                'Positive (kN)': 'Положительное (кН)',
-                'Negative (kN)': 'Отрицательное (кН)',
+                'Positive (N)': 'Положительное (Н)',
+                'Negative (N)': 'Отрицательное (Н)',
 
                 # Подробная информация о петлях гистерезиса
                 'No hysteresis loop information': 'Нет данных о петлях гистерезиса',
@@ -466,7 +466,7 @@ class HysteresisAnalyzer(QMainWindow):
                 'Failed to generate Bézier curve': '贝塞尔曲线生成失败',
                 'Smoothing failed': '平滑失败',
                 'Displacement (mm)': '位移 (mm)',
-                'Force (N)': '力 (kN)',
+                'Force (N)': '力 (N)',
                 'Force-Displacement Hysteresis Curve': '力-位移滞回曲线',
                 'Hysteresis Curve': '滞回曲线',
                 'Positive Skeleton Curve': '正向骨架曲线',
@@ -516,8 +516,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Peak displacement': '峰值位移',
                 'Residual deformation (mm)': '残余变形 (mm)',
                 'Peak load': '峰值荷载',
-                'Initial stiffness (kN/mm)': '初始刚度 (kN/mm)',
-                'Secant stiffness (kN/mm)': '割线刚度 (kN/mm)',
+                'Initial stiffness (N/mm)': '初始刚度 (k/mm)',
+                'Secant stiffness (N/mm)': '割线刚度 (N/mm)',
                 'Total hysteresis loop area (kN·mm)': '滞回环总面积 (kN·mm)',
                 'Cumulative energy dissipation (kN·mm)': '累积耗能 (kN·mm)',
                 'Average loop energy (kN·mm)': '平均单环耗能 (kN·mm)',
@@ -528,8 +528,8 @@ class HysteresisAnalyzer(QMainWindow):
                 'Stiffness degradation (%)': '刚度退化 (%)',
                 'Positive (mm)': '正向 (mm)',
                 'Negative (mm)': '负向 (mm)',
-                'Positive (kN)': '正向 (kN)',
-                'Negative (kN)': '负向 (kN)',
+                'Positive (N)': '正向 (N)',
+                'Negative (N)': '负向 (N)',
 
                 # 滞回环详细信息翻译
                 'No hysteresis loop information': '无滞回环信息',
@@ -1797,8 +1797,8 @@ class HysteresisAnalyzer(QMainWindow):
         max_force_idx = np.argmax(force)
         min_force_idx = np.argmin(force)
         self.indices['峰值荷载'] = {
-            '正向 (kN)': float(force[max_force_idx]),
-            '负向 (kN)': float(force[min_force_idx])
+            '正向 (N)': float(force[max_force_idx]),
+            '负向 (N)': float(force[min_force_idx])
         }
         
         self.indices['残余变形 (mm)'] = float(displacement[-1])
@@ -1811,7 +1811,7 @@ class HysteresisAnalyzer(QMainWindow):
             pos_curve = self.skeleton_curve['positive']
             if len(pos_curve['disp']) > 1 and pos_curve['disp'][-1] != 0:
                 K_sec = pos_curve['force'][-1] / pos_curve['disp'][-1]
-                self.indices['割线刚度 (kN/mm)'] = float(K_sec)
+                self.indices['割线刚度 (N/mm)'] = float(K_sec)
         
         if len(displacement) > 10:
             disp_threshold = max(0.001, np.max(np.abs(displacement)) * 0.001)
@@ -1831,7 +1831,7 @@ class HysteresisAnalyzer(QMainWindow):
                 force_range = force[start_idx:end_idx]
                 if len(disp_range) > 1 and np.ptp(disp_range) > disp_threshold:
                     K_initial = np.polyfit(disp_range, force_range, 1)[0]
-                    self.indices['初始刚度 (kN/mm)'] = float(K_initial)
+                    self.indices['初始刚度 (N/mm)'] = float(K_initial)
         
         if total_area > 0 and self.skeleton_curve:
             pos_curve = self.skeleton_curve['positive']
@@ -1871,9 +1871,9 @@ class HysteresisAnalyzer(QMainWindow):
                 strength_deg = (forces[0] - forces[-1]) / forces[0] * 100
                 self.indices['负向强度退化 (%)'] = float(strength_deg)
         
-        if '初始刚度 (kN/mm)' in self.indices and '割线刚度 (kN/mm)' in self.indices:
-            K0 = self.indices['初始刚度 (kN/mm)']
-            Ks = self.indices['割线刚度 (kN/mm)']
+        if '初始刚度 (N/mm)' in self.indices and '割线刚度 (N/mm)' in self.indices:
+            K0 = self.indices['初始刚度 (N/mm)']
+            Ks = self.indices['割线刚度 (N/mm)']
             if K0 != 0:
                 stiffness_deg = (K0 - Ks) / K0 * 100
                 self.indices['刚度退化 (%)'] = float(stiffness_deg)
@@ -2226,8 +2226,8 @@ class HysteresisAnalyzer(QMainWindow):
             '峰值位移': 'Peak displacement',
             '残余变形 (mm)': 'Residual deformation (mm)',
             '峰值荷载': 'Peak load',
-            '初始刚度 (kN/mm)': 'Initial stiffness (kN/mm)',
-            '割线刚度 (kN/mm)': 'Secant stiffness (kN/mm)',
+            '初始刚度 (N/mm)': 'Initial stiffness (N/mm)',
+            '割线刚度 (N/mm)': 'Secant stiffness (N/mm)',
             '滞回环总面积 (kN·mm)': 'Total hysteresis loop area (kN·mm)',
             '累计耗能 (kN·mm)': 'Cumulative energy dissipation (kN·mm)',
             '平均环路耗能 (kN·mm)': 'Average loop energy (kN·mm)',
@@ -2238,13 +2238,13 @@ class HysteresisAnalyzer(QMainWindow):
             '刚度退化 (%)': 'Stiffness degradation (%)',
             '正向 (mm)': 'Positive (mm)',
             '负向 (mm)': 'Negative (mm)',
-            '正向 (kN)': 'Positive (kN)',
-            '负向 (kN)': 'Negative (kN)',
+            '正向 (N)': 'Positive (N)',
+            '负向 (N)': 'Negative (N)',
         }
         
         categories = {
             'Displacement-related': ['峰值位移', '残余变形 (mm)'],
-            'Mechanical properties': ['峰值荷载', '初始刚度 (kN/mm)', '割线刚度 (kN/mm)'],
+            'Mechanical properties': ['峰值荷载', '初始刚度 (N/mm)', '割线刚度 (N/mm)'],
             'Energy metrics': ['滞回环总面积 (kN·mm)', '累计耗能 (kN·mm)', 
                     '平均环路耗能 (kN·mm)', '最大环路耗能 (kN·mm)'],
             'Coefficient metrics': ['等效粘滞系数'],
@@ -2328,7 +2328,7 @@ class HysteresisAnalyzer(QMainWindow):
         self.canvas.ax.minorticks_on()
         self.canvas.ax.grid(True, which='minor', alpha=0.15, linestyle=':', linewidth=0.3)
         self.canvas.ax.set_xlabel('位移 (mm)', fontsize=11)
-        self.canvas.ax.set_ylabel('力 (kN)', fontsize=11)
+        self.canvas.ax.set_ylabel('力 (N)', fontsize=11)
         self.canvas.ax.set_title('力-位移滞回曲线', fontsize=12)
         self.canvas.draw()
     
