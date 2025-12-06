@@ -1,8 +1,8 @@
 # 🕋Инструмент анализа кривых гистерезиса «сила-перемещение»
 
-[[Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[[License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[[PySide6](https://img.shields.io/badge/GUI-PySide6-orange.svg)](https://pypi.org/project/PySide6/)
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![PySide6](https://img.shields.io/badge/GUI-PySide6-orange.svg)](https://pypi.org/project/PySide6/)
 
 ### 📖 Документация
 
@@ -11,8 +11,6 @@
 [![Русский](https://img.shields.io/badge/🇷🇺_Русский-Нажмите-Yellow?style=for-the-badge)](README.ru.md)
 
 *Настольное приложение для анализа кривых гистерезиса «сила-перемещение» из испытаний конструкций при циклическом нагружении*
-
-[Возможности](#-возможности) • [Установка](#-установка) • [Быстрый старт](#-быстрый-старт) • [Руководство пользователя](#-подробное-руководство-пользователя)
 
 ---
 

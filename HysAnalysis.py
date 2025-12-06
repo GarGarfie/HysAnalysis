@@ -1,3 +1,19 @@
+"""
+HysAnalysis - Force-Displacement Hysteresis Curve Analysis Tool
+================================================================
+
+A Python application for analyzing force-displacement hysteresis curves,
+extracting skeleton curves, and calculating various mechanical performance indices.
+
+GitHub Repository: https://github.com/GarGarfie/HysAnalysis
+License: MIT (or your chosen license)
+Author: GarGarfie
+Version: 1.0.0
+
+For bug reports, feature requests, and contributions, please visit:
+https://github.com/GarGarfie/HysAnalysis/issues
+"""
+
 import sys
 import numpy as np
 import pandas as pd
@@ -12,6 +28,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QFont, QKeySequence, QShortcut, QScreen, QIcon
+import webbrowser
 
 # Matplotlib imports
 import matplotlib
@@ -198,6 +215,7 @@ class HysteresisAnalyzer(QMainWindow):
                 'Fail to read file:\n{}': 'Fail to read file:\n{}',
                 'Deleted': 'Deleted',
                 'Deleted {} files': 'Deleted {} files',
+                'Open Source Project | Contributions Welcome': 'Open Source Project | Contributions Welcome',
                 
                  # 分析结果页面翻译
                 'File Information': 'File Information',
@@ -347,6 +365,7 @@ class HysteresisAnalyzer(QMainWindow):
                 'Fail to read file:\n{}': 'Не удалось прочитать файл: \n{}',
                 'Deleted': 'Удалено',
                 'Deleted {} files': 'Удалено {} файлов',
+                'Open Source Project | Contributions Welcome': 'Проект с открытым исходным кодом | Приветствуются вклады',
                 
                 # Перевод страницы результатов анализа
                 'File Information': 'Информация о файле',
@@ -495,6 +514,7 @@ class HysteresisAnalyzer(QMainWindow):
                 'Fail to read file:\n{}': '读取文件失败: \n{}',
                 'Deleted': '已删除',
                 'Deleted {} files': '已删除 {} 个文件',
+                'Open Source Project | Contributions Welcome': '免费开源项目 | 欢迎贡献',
                   
                 # 分析结果页面翻译
                 'File Information': '文件信息',
@@ -889,6 +909,37 @@ class HysteresisAnalyzer(QMainWindow):
         self.filter_group.setLayout(filter_layout)
         layout.addWidget(self.filter_group)
         
+        # GitHub 开源项目链接
+        github_group = QGroupBox()
+        github_layout = QVBoxLayout()
+
+        # 项目信息标签
+        self.project_label = QLabel(self.tr('Open Source Project | Contributions Welcome'))
+        self.project_label.setStyleSheet("font-weight: bold; color: #2c3e50;")
+        self.project_label.setAlignment(Qt.AlignCenter)
+        github_layout.addWidget(self.project_label)
+
+        # GitHub 链接
+        github_link = QLabel()
+        github_link.setText('<a href="https://github.com/GarGarfie/HysAnalysis" style="color: #3498db; text-decoration: none;">📂 github.com/GarGarfie/HysAnalysis</a>')
+        github_link.setOpenExternalLinks(True)
+        github_link.setAlignment(Qt.AlignCenter)
+        github_link.setStyleSheet("""
+            QLabel {
+                padding: 8px;
+                background-color: #ecf0f1;
+                border-radius: 4px;
+                font-size: 9pt;
+            }
+            QLabel:hover {
+                background-color: #d5dbdb;
+            }
+        """)
+        github_layout.addWidget(github_link)
+
+        github_group.setLayout(github_layout)
+        layout.addWidget(github_group)
+        
         # 添加弹簧
         layout.addStretch()
         
@@ -922,8 +973,8 @@ class HysteresisAnalyzer(QMainWindow):
             
         if self.current_data:
             self.update_plot()
-            self.update_results()    # 添加这行
-            self.update_loop_info()  # 添加这行
+            self.update_results()
+            self.update_loop_info()
             
     def update_ui_language(self):
         """更新UI所有文本"""
@@ -955,6 +1006,7 @@ class HysteresisAnalyzer(QMainWindow):
         self.tab_widget.setTabText(0, self.tr('Hysteresis curve and backbone curve'))
         self.tab_widget.setTabText(1, self.tr('Evaluation metrics and analysis results'))
         self.tab_widget.setTabText(2, self.tr('Detailed information on hysteresis loops'))
+        self.project_label.setText(self.tr('Open Source Project | Contributions Welcome'))
         
         # 更新ComboBox - 保存当前选择
         current_algo = self.smooth_algorithm.currentIndex()

@@ -13,8 +13,6 @@
 
 *A desktop application for analyzing force-displacement hysteresis curves from structural cyclic loading tests*
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [User Guide](#-detailed-user-guide)
-
 ---
 
 ## 📋 Table of Contents
