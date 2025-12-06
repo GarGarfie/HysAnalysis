@@ -440,8 +440,9 @@ The key difference is how "yield displacement" is defined:
 **Definition**: Yield at 75% of peak force
 
 **Calculation**:
+
 $$
-F_{yield} = 0.75 × F_{peak}
+F_{yield} = 0.75 \times F_{peak}
 $$
 
 $$
@@ -477,12 +478,13 @@ $D_{peak}$ — Peak displacement.
 **Definition**: Based on equal energy dissipation
 
 **Calculation**:
+
 $$
 \text{Total Energy} = \text{Area under skeleton curve}
 $$
 
 $$
-D*_{yield} = \frac{2 \times \text{Total Energy}}{F_{peak}}
+D_{yield} = \frac{2 \times \text{Total Energy}}{F_{peak}}
 $$
 
 $$
@@ -520,6 +522,7 @@ $D_{yield}$ — Yield displacement;
 **Definition**: Stiffness degradation to 1/3 of initial
 
 **Calculation**:
+
 $$
 K_{initial} = \text{Initial slope of skeleton curve}
 $$
@@ -573,6 +576,7 @@ $\mu$ — Ductility ratio.
 Define line from origin $(0, 0)$ to peak point $(D_{peak}, F_{peak})$
 
 For each point $(D_i, F_i)$ on skeleton curve, calculate perpendicular distance:
+
 $$
 d_i = \frac{|F_{peak} \cdot D_i - D_{peak} \cdot F_i|}{\sqrt{D_{peak}^2 + F_{peak}^2}}
 $$
@@ -620,6 +624,7 @@ $\mu$ — Ductility ratio.
 **Definition**: Yield at 60% of peak force
 
 **Calculation**:
+
 $$
 F_{yield} = 0.60 \times F_{peak}
 $$
@@ -665,18 +670,22 @@ $\mu$ — Ductility ratio.
 **Definition**: Bilinear curve with equal energy
 
 **Calculation**:
+
 $$
 E_{actual} = \text{Area under skeleton curve}
 $$
+
 Construct bilinear curve with:
 
 - Elastic branch: $(0, 0) \to (D_{yield}, F_{peak})$
 - Plastic plateau: $F = F_{peak}$ from $D_{yield}$ to $D_{peak}$
 
 Adjust $D_{yield}$ until: $E_{bilinear} = E_{actual}$
+
 $$
 \mu = \frac{D_{peak}}{D_{yield}}
 $$
+
 Where,
 
 $E_{actual}$ — Energy under actual skeleton curve;
@@ -712,6 +721,7 @@ $\mu$ — Ductility ratio.
 **Definition**: Intersection of initial stiffness line with peak force
 
 **Calculation**:
+
 $$
 K_{initial} = \text{Initial elastic slope}
 $$
@@ -906,6 +916,7 @@ Need Smoothing?
 ##### Peak Displacement (D<sub>max</sub>)
 
 **Definition**: Maximum absolute displacement reached during test
+
 $$
 D_{max,positive} = max (displacement)
 $$
@@ -919,6 +930,7 @@ $$
 ##### Residual Deformation (D<sub>res</sub>)
 
 **Definition**: Permanent displacement after load removal
+
 $$
 D_{res} = displacemnet_{\text{final point}}
 $$
@@ -928,6 +940,7 @@ $$
 ##### Peak Load (F<sub>max</sub>)
 
 **Definition**: Maximum force during test
+
 $$
 F_{max,positive} = max (Force)
 $$
@@ -939,9 +952,11 @@ $$
 ##### Initial Stiffness (K<sub>0</sub>)
 
 **Definition**: Slope of initial linear elastic region
+
 $$
 K_0 = ΔF / ΔD \text{ (first ~5-10 percent of data)}
 $$
+
 **Calculation Method**:
 
 - Take first 5-20 data points (or first 10% of data)
@@ -955,6 +970,7 @@ $$
 $$
 K_{sec} = F_{max} / D_{max}
 $$
+
 **Relationship**:
 
 $K_{sec} < K_{0} (always, due to damage/yielding)
@@ -967,6 +983,7 @@ Ratio $K_{sec}/K_{0}$ indicates degradation
 **Definition**: Sum of areas enclosed by all hysteresis loops
 
 **Formula**:
+
 $$
 E_{total} = \sum_{i=1}^{n} A_i
 $$
@@ -996,6 +1013,7 @@ $m$ — Number of data points in loop.
 ##### Cumulative Energy Dissipation
 
 **Definition**: Same as total hysteresis loop area
+
 $$
 E_{cumulative} = E_{total}
 $$
@@ -1003,9 +1021,11 @@ $$
 ##### Average Loop Energy (E<sub>avg</sub>)
 
 **Definition**: Mean energy per loop
+
 $$
 E_{avg} = \frac{E_{total}}{n_{loops}}
 $$
+
 Where,
 
 $E_{avg}$ — Average loop energy;
@@ -1017,9 +1037,11 @@ $n_{loops}$ — Number of loops.
 ##### Maximum Loop Energy (E<sub>max</sub>)
 
 **Definition**: Largest single loop area
+
 $$
 E_{max} = \max(A_i) \text{ for all } i
 $$
+
 Where,
 
 $E_{max}$ — Maximum loop energy;
@@ -1029,6 +1051,7 @@ $A_i$ — Area of loop $i$.
 ##### Equivalent Viscous Damping Coefficient (ξ<sub>eq</sub>)
 
 **Definition**: Ratio of dissipated to elastic strain energy
+
 $$
 \xi_{eq} = \frac{E_{dissipated}}{2\pi \times E_{elastic}}
 $$
@@ -1058,6 +1081,7 @@ $F_{max}$ — Maximum force.
 ##### Strength Degradation (SD)
 
 **Definition**: Percentage decrease in force capacity
+
 $$
 SD_{positive} = \frac{F_{first} - F_{last}}{F_{first}} \times 100\%
 $$
@@ -1083,6 +1107,7 @@ $F_{last}$ — Peak force in last loop.
 $$
 KD = \frac{K_{initial} - K_{secant}}{K_{initial}} \times 100\%
 $$
+
 Where,
 
 $KD$ — Stiffness degradation;
