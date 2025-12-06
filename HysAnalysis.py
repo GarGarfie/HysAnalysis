@@ -576,7 +576,16 @@ class HysteresisAnalyzer(QMainWindow):
         self.setWindowTitle("Force-Displacement Curve Analyzer")
 
         # 设置窗口图标
-        icon_path = Path(__file__).parent / "icon.ico"
+        def get_resource_path(relative_path):
+            """获取资源文件的绝对路径（支持打包后的exe）"""
+            try:
+                # PyInstaller创建临时文件夹，路径存储在_MEIPASS中
+                base_path = sys._MEIPASS
+            except Exception:
+                base_path = Path(__file__).parent
+            return Path(base_path) / relative_path
+
+        icon_path = get_resource_path("icon.ico")
         if icon_path.exists():
             self.setWindowIcon(QIcon(str(icon_path)))
         
