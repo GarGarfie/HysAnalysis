@@ -495,9 +495,9 @@ Where,
 
  $\text{Total Energy}$ - Total energy dissipation;
 
-$D_{yield}$ — Yield displacement;
+ $D_{yield}$ — Yield displacement;
 
-*$D_*{peak}$ — Peak displacement;
+ $D_{peak}$ — Peak displacement;
 
  $F_{peak}$ — Peak load;
 
@@ -973,7 +973,8 @@ $$
 
 **Relationship**:
 
-$K_{sec} < K_{0} (always, due to damage/yielding)
+$K_{sec} < K_{0}$ (always, due to damage/yielding)
+
 Ratio $K_{sec}/K_{0}$ indicates degradation
 
 #### 3. Energy Metrics
