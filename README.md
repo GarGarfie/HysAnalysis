@@ -1489,7 +1489,7 @@ If you use this tool in your research, please cite:
 }
 ```
 
-
+You can also use open source reference managers such as [**Zotero**](https://github.com/zotero/zotero) to directly capture the citation from this page.
 
 ---
 
