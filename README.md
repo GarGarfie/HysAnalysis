@@ -1,21 +1,19 @@
 
-# 🔬 Force-Displacement Hysteresis Curve Analysis Tool
+# 🕋Force-Displacement Hysteresis Curve Analysis Tool
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PySide6](https://img.shields.io/badge/GUI-PySide6-orange.svg)](https://pypi.org/project/PySide6/)
 
-### 📖 Multi-language Documentation
+### 📖 Documentation
 
 [![English](https://img.shields.io/badge/🇺🇸_English-Click-blue?style=for-the-badge)](README.md)
 [![简体中文](https://img.shields.io/badge/🇨🇳_简体中文-点击-red?style=for-the-badge)](README.zh-CN.md)
 [![Русский](https://img.shields.io/badge/🇷🇺_Русский-Нажмите-Yellow?style=for-the-badge)](README.ru.md)
 
-*A comprehensive desktop application for analyzing force-displacement hysteresis curves from structural cyclic loading tests*
+*A desktop application for analyzing force-displacement hysteresis curves from structural cyclic loading tests*
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [User Guide](#-detailed-user-guide) • [Documentation](#-documentation)
-
-</div>
+[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [User Guide](#-detailed-user-guide)
 
 ---
 
@@ -25,18 +23,13 @@
 - [Features](#-features)
 - [System Requirements](#-system-requirements)
 - [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Detailed User Guide](#-detailed-user-guide)
 - [Data Format Requirements](#-data-format-requirements)
 - [Analysis Methods](#-analysis-methods)
 - [Smoothing Algorithms](#-smoothing-algorithms)
 - [Performance Metrics](#-performance-metrics)
 - [Keyboard Shortcuts](#-keyboard-shortcuts)
-- [Troubleshooting](#-troubleshooting)
-- [Example Workflows](#-example-workflows)
 - [FAQ](#-frequently-asked-questions)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [Citation](#-citation)
 
 ---
@@ -45,15 +38,13 @@
 
 This application is designed for researchers, engineers, and students working with structural testing data. It provides automated analysis of force-displacement hysteresis curves obtained from cyclic loading tests, commonly used in earthquake engineering, structural dynamics, and material testing.
 
-### Key Capabilities
+### Capabilities
 
 - **Automated Hysteresis Loop Detection**: Identifies and extracts individual loading cycles
 - **Skeleton Curve Extraction**: Derives backbone curves using two different methods
-- **Advanced Smoothing**: Seven state-of-the-art interpolation algorithms
-- **Comprehensive Metrics**: Calculates 15+ structural performance indicators
+- **Advanced Smoothing**: Seven interpolation algorithms
+- **Comprehensive Metrics**: Calculates structural performance indicators
 - **Ductility Analysis**: Seven different methods for ductility coefficient calculation
-- **Multi-language Interface**: Full support for English, Chinese, and Russian
-- **Interactive Visualization**: Mouse-driven zoom, pan, and navigation
 
 ---
 
@@ -143,14 +134,7 @@ Seven internationally recognized methods:
 | **EEEP** (Equivalent Energy) | Energy equivalence principle          | Performance-based design           |
 | **Elastic Yield**            | Initial stiffness intersection        | Traditional yield point definition |
 
-### 🌍 Multi-language Support
-
-- **Interface Language**: Switchable between English, Chinese (Simplified), and Russian
-- **Dynamic Translation**: All UI elements, labels, and output reports update instantly
-- **Font Optimization**: Automatic font selection based on language for proper character display
-- **Number Formatting**: Culturally appropriate number and decimal formatting
-
-### 📑 Comprehensive Reporting
+### 📑 Report
 
 Three detailed output tabs:
 
@@ -178,21 +162,7 @@ Three detailed output tabs:
 
 ---
 
-## 💻 System Requirements
-
-### Hardware Requirements
-
-- **Minimum**:
-  - CPU: 1.5 GHz dual-core processor
-  - RAM: 4 GB
-  - Display: 1280×720 resolution
-  - Storage: 500 MB available space
-
-- **Recommended**:
-  - CPU: 2.5 GHz quad-core processor
-  - RAM: 8 GB or more
-  - Display: 1920×1080 or higher
-  - Storage: 1 GB available space
+## 💻 Requirements
 
 ### Software Requirements
 
@@ -274,384 +244,11 @@ pip install PySide6
 python HysAnalysis_MultiLang.py
 ```
 
-### Method 3: Portable Executable (Future Release)
+### Method 3: Portable Executable
 
-*Standalone executable versions for Windows/Mac will be available in future releases.*
+***\*For Windows Users:\**** Can download the standalone executable file from the [Releases page](https://github.com/GarGarfie/HysAnalysis/releases).
 
----
-
-## 🎯 Quick Start
-
-### 5-Minute Getting Started
-
-1. **Launch the Application**
-   ```bash
-   python HysAnalysis_MultiLang.py
-   ```
-
-2. **Import Your Data**
-   - Click **"Import"** button (top-left panel)
-   - Select your data file(s) (`.txt`, `.csv`, or `.xlsx`)
-   - File appears in the list
-
-3. **Select a File**
-   - Click on the filename in the list
-   - Data loads automatically
-   - Initial analysis appears
-
-4. **View Results**
-   - **Tab 1**: See hysteresis curve and skeleton curves
-   - **Tab 2**: Read performance metrics
-   - **Tab 3**: Review individual loop details
-
-5. **Customize Analysis** (Optional)
-   - Choose skeleton curve method
-   - Select ductility calculation method
-   - Apply smoothing if desired
-
-### First-time User Workflow
-
-```
-Start → Import Data → Select File → View Default Analysis → 
-  ↓
-Satisfied? 
-  Yes → Export Results → End
-  No → Adjust Settings → Update Analysis → (loop back to Satisfied?)
-```
-
----
-
-## 📖 Detailed User Guide
-
-### Interface Overview
-
-The application window is divided into two main sections:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Force-Displacement Curve Analysis Tool                      │
-├──────────────────┬────────────────────────────────────────────┤
-│  Control Panel   │  Display Area                              │
-│                  │                                            │
-│  • Language      │  Tab 1: [Graph]                            │
-│  • File Mgmt     │  ┌──────────────────────────────────────┐ │
-│  • Plot Style    │  │                                      │ │
-│  • Skeleton      │  │     Hysteresis Curve                 │ │
-│  • Direction     │  │     + Skeleton Curves                │ │
-│  • Ductility     │  │                                      │ │
-│  • Filtering     │  └──────────────────────────────────────┘ │
-│                  │                                            │
-│                  │  Tab 2: [Metrics Report]                   │
-│                  │  Tab 3: [Loop Details]                     │
-└──────────────────┴────────────────────────────────────────────┘
-```
-
-### Left Panel: Control Panel
-
-#### 1. Language Selection
-
-```
-┌──────────────────────┐
-│ Language             │
-├──────────────────────┤
-│ [English     ▼]      │
-└──────────────────────┘
-```
-
-- **Options**: English, Русский (Russian), 中文 (Chinese)
-- **Effect**: Changes entire interface, labels, and reports
-- **Real-time**: Updates immediately without restart
-
-#### 2. File Management
-
-```
-┌──────────────────────┐
-│ File Management      │
-├──────────────────────┤
-│ [Import] [Clear]     │
-│                      │
-│ ┌──────────────────┐ │
-│ │ data1.txt        │ │
-│ │ data2.csv        │ │
-│ │ test_results.xlsx│ │
-│ └──────────────────┘ │
-│                      │
-│ Shortcut: "Delete"   │
-└──────────────────────┘
-```
-
-**Operations**:
-- **Import**: Add one or multiple files
-  - Supports multi-selection (Ctrl+Click or Cmd+Click)
-  - Filters by supported formats
-  - Duplicates are automatically prevented
-
-- **Clear**: Remove all files from list
-  - Requires confirmation
-  - Clears current analysis
-
-- **Select**: Click filename to load and analyze
-  - Automatically triggers analysis
-  - Previous analysis is saved for undo
-
-- **Delete**: Select file and press Delete key
-  - Removes from list only (original file untouched)
-  - Clears analysis if currently displayed file
-
-#### 3. Plot Style
-
-```
-┌──────────────────────────────────┐
-│ Plot Style                       │
-├──────────────────────────────────┤
-│ ○ Dot-Line Graph                 │
-│ ● Spline Connected Graph         │
-│                                  │
-│   Smoothing algorithm:           │
-│   [PCHIP - Shape-pres...  ▼]     │
-│                                  │
-│   [Algorithm description box]    │
-│                                  │
-│   Smoothness parameter:          │
-│   Value:    [1.00]               │
-│   Slider:   [━━━○━━━━━━]         │
-│   Current value: 1.00            │
-│                                  │
-│   Preset: [None][Low][Med][Hi]   │
-│                                  │
-│   Points: [300    ▼]             │
-│   ☑ Show original data points    │
-└──────────────────────────────────┘
-```
-
-**Dot-Line Graph**:
-- Shows original data as-is
-- Points connected by straight lines
-- No processing or interpolation
-- Fastest rendering
-
-**Spline Connected Graph**:
-- Applies smoothing algorithm
-- Creates visually appealing curves
-- Useful for presentations
-- Adjustable parameters
-
-**Smoothing Controls** (only when Spline selected):
-
-a) **Algorithm Dropdown**:
-   - Lists all 7 algorithms
-   - Hover for brief description
-   - Description box updates below
-
-b) **Smoothness Parameter** (visibility depends on algorithm):
-   - **Bézier**: Control point density (10-100%)
-     - 10% = ultra smooth, 100% = follows data closely
-     - Recommended: 20-40%
-   - **B-spline**: Smoothness factor s (0.0-10.0)
-     - 0 = exact interpolation, higher = smoother
-   - **Savitzky-Golay**: Window size (3-51, odd numbers only)
-     - Larger = smoother but may lose features
-   - **UnivariateSpline**: Smoothness factor s (0.0-10.0)
-     - Similar to B-spline
-   - **PCHIP, Akima, CubicSpline**: No parameter (auto-hidden)
-
-c) **Preset Buttons**:
-   - Quick access to common values
-   - None (0.0), Low (2.5), Medium (5.0), High (7.5), Very High (10.0)
-   - Only affects algorithms with adjustable parameters
-
-d) **Interpolation Points**:
-   - Number of points in smoothed curve
-   - Options: 100, 200, 300, 500, 1000
-   - More points = smoother appearance, slower rendering
-   - Default: 300 (good balance)
-
-e) **Show Original Data Points**:
-   - Overlays raw data points on smooth curve
-   - Helps verify smoothing accuracy
-   - Useful for quality checking
-
-#### 4. Skeleton Curve Extraction Method
-
-```
-┌──────────────────────────────────┐
-│ Skeleton curve extraction method │
-├──────────────────────────────────┤
-│ ● Method 1: Outer Envelope       │
-│ ○ Method 2: Peak Points          │
-└──────────────────────────────────┘
-```
-
-**Method 1: Outer Envelope**
-- Traces the outermost boundary of all loops
-- Incrementally finds maximum displacement points
-- Suitable for:
-  - Data with consistent loading protocols
-  - When you want the absolute maximum response
-  - Standard backbone curve generation
-
-**Method 2: Peak Points**
-- Connects successive peak points in each loop
-- Identifies local maxima/minima
-- More sensitive to individual cycle characteristics
-- Suitable for:
-  - Data with varying displacement levels
-  - When each cycle's peak is important
-  - Protocols with non-monotonic displacement increase
-
-**Comparison Example**:
-```
-Force
-  │     Method 1          Method 2
-  │        *                 *
-  │       /│\               /│\
-  │      / │ \             / │ \
-  │     *  │  *           *  *  *
-  │    /   │   \         /   │   \
-  │   /    │    \       /    │    \
-  └──────────────────────────────── Displacement
-```
-
-#### 5. Skeleton Curve Analysis Direction
-
-```
-┌──────────────────────────────────┐
-│ Skeleton curve analysis direction│
-├──────────────────────────────────┤
-│ ● All directions                 │
-│ ○ Positive direction only        │
-│ ○ Negative direction only        │
-└──────────────────────────────────┘
-```
-
-- **All directions**: Analyzes both positive and negative displacement
-  - Default and recommended for symmetric analysis
-  - Provides complete picture
-  - Calculates metrics for both directions
-
-- **Positive direction only**: Only positive displacement side
-  - Useful for asymmetric structures
-  - Focuses on push direction
-  - Reduces visual clutter
-
-- **Negative direction only**: Only negative displacement side
-  - Useful for asymmetric structures
-  - Focuses on pull direction
-  - Alternative perspective
-
-#### 6. Ductility Coefficient Calculation Method
-
-```
-┌──────────────────────────────────┐
-│ Ductility coefficient calculation│
-├──────────────────────────────────┤
-│ ● Geometric Method               │
-│ ○ Energy Method                  │
-│ ○ Park Method                    │
-│ ○ Farthest Point                 │
-│ ○ ASCE Method                    │
-│ ○ EEEP Method                    │
-│ ○ Elastic Yield                  │
-└──────────────────────────────────┘
-```
-
-See [Ductility Methods](#ductility-coefficient-methods) section for detailed explanations.
-
-#### 7. Data Filtering Options
-
-```
-┌──────────────────────────────────┐
-│ Data filtering options           │
-├──────────────────────────────────┤
-│ ☑ Only retain the first loop of  │
-│   the same displacement level    │
-└──────────────────────────────────┘
-```
-
-**Purpose**: Many testing protocols repeat cycles at the same displacement level (e.g., 3 cycles at ±10mm, 3 cycles at ±20mm)
-
-**When enabled**:
-- Keeps only the first cycle at each displacement level
-- Removes subsequent repetitions
-- Reduces data clutter
-- Focuses on fresh response (before degradation within same level)
-
-**When disabled**:
-- Keeps all cycles
-- Shows degradation within same displacement level
-- More complete data representation
-- May result in overlapping curves
-
-**Example**:
-```
-Test Protocol: 3 cycles at each level
-Without filter: 10mm, 10mm, 10mm, 20mm, 20mm, 20mm, 30mm...
-With filter:    10mm, 20mm, 30mm...
-```
-
-### Right Panel: Display Area
-
-#### Tab 1: Hysteresis Curve and Backbone Curve
-
-**Toolbar** (Top of graph):
-```
-[Home] [Back] [Forward] [Pan] [Zoom] [Configure] [Save]
-```
-
-- **Home** 🏠: Reset view to original extents
-- **Back** ←: Previous view
-- **Forward** →: Next view (after using Back)
-- **Pan** ✋: Click and drag to move graph
-- **Zoom** 🔍: Click and drag to zoom rectangle
-- **Configure** ⚙️: Adjust subplot spacing, margins
-- **Save** 💾: Export as PNG, PDF, SVG, etc.
-
-**Graph Elements**:
-```
-Force (kN)
-    ↑
-    │         Positive Peak *
-    │              /\
-    │    Skeleton /  \ Hysteresis
-    │    Curve  /    \ Loops
-    │         /      \
-    │        /        \
-────┼────────────────────────→ Displacement (mm)
-    │         \      /
-    │          \    /
-    │    Skeleton\  /Hysteresis
-    │      Curve  \/  Loops
-    │              *
-    │         Negative Peak
-```
-
-**Legend** (Auto-positioned, movable):
-- Hysteresis Curve (blue line)
-- Positive Skeleton Curve (red line with circles)
-- Negative Skeleton Curve (green line with squares)
-- Skeleton Data Points (if smoothing + show points enabled)
-- Positive Peak (red star)
-- Negative Peak (green star)
-- Starting Points (yellow-filled markers)
-
-**Mouse Interactions**:
-- **Scroll Wheel**: Zoom in/out centered on cursor
-- **Click + Drag**: Pan when Pan mode active
-- **Click Legend**: Toggle line visibility (matplotlib feature)
-
-#### Tab 2: Evaluation Metrics and Analysis Results
-
-- 
-
-#### Tab 3: Detailed Hysteresis Loop Information
-
-**Interpretation**:
-- **No.**: Sequential loop number
-- **Type**: Positive (push) or Negative (pull)
-- **Peak Disp.**: Maximum displacement in this loop
-- **Peak Force**: Force at peak displacement
-- **Loop Area**: Energy dissipated in this cycle (area enclosed by loop)
-- **Data Points**: Number of measurement points in this loop
+*Standalone executable versions for Mac/Linux will be available in future releases.*
 
 ---
 
@@ -673,9 +270,6 @@ Force (kN)
 Column 1: Displacement (mm)
 Column 2: Force (N or kN)
 ```
-
-#### Optional Columns (Ignored)
-- Column 3+: Time, strain, other sensors (not used by this tool)
 
 ### Format Examples
 
@@ -757,7 +351,7 @@ Displacement_mm,Force_kN
 
 1. **Units**:
    - Displacement typically in mm
-   - Force in kN (or N, but kN is conventional)
+   - Force in N (or kN)
    - Mixed units will affect metric calculations
 
 2. **Zero Point**:
@@ -810,21 +404,7 @@ The tool automatically:
 - Comparing different specimens
 - Reporting ultimate capacity
 
-**Visual Example**:
-```
-Force
-  │        *Peak 3
-  │       /│
-  │      / │  *Peak 2
-  │     /  │ / │
-  │    /   │/  │  *Peak 1
-  │   /    *   │ /│
-  │  /         │/ │
-  │ /          *  │
-  │/              │
-  └────────────────────── Displacement
-  Envelope connects: Origin → Peak1 → Peak2 → Peak3
-```
+
 
 #### Method 2: Peak Points
 
@@ -847,24 +427,9 @@ Force
 - Research on cyclic behavior
 - Non-standard loading protocols
 
-**Visual Example**:
-```
-Force
-  │     *Peak 2
-  │    /│\
-  │   / │ \ *Peak 3
-  │  /  │  X
-  │ /   │ /│
-  │/ *──┼/ │ *Peak 1
-  │ Peak │  │/
-  │  0  /│  *
-  │    / │
-  └────────────────────── Displacement
-  Connects: Start → Peak1 → Peak2 → Peak3
-  (May zigzag if peaks vary)
-```
 
-### Ductility Coefficient Methods
+
+### Ductility Coefficient Calculation Methods
 
 Ductility (μ) = Ultimate Displacement / Yield Displacement
 
@@ -875,13 +440,26 @@ The key difference is how "yield displacement" is defined:
 **Definition**: Yield at 75% of peak force
 
 **Calculation**:
-```
-F_yield = 0.75 × F_peak
-Find displacement where F = F_yield
-μ = D_peak / D_yield
-```
+$$
+F_{yield} = 0.75 × F_{peak}
+$$
+
+$$
+μ = D_{peak} / D_{yield}
+$$
+
+Where,
+
+$F_{yield}$ — Yield load;
+
+$F_{peak}$ — Peak load;
+
+$D_{yield}$ — Yield displacement;
+
+$D_{peak}$ — Peak displacement.
 
 **Pros**:
+
 - Simple and intuitive
 - Widely used in practice
 - Easy to reproduce
@@ -892,40 +470,86 @@ Find displacement where F = F_yield
 
 **Typical Range**: 2-6 for well-designed structures
 
+
+
 #### 2. Energy Method
 
 **Definition**: Based on equal energy dissipation
 
 **Calculation**:
-```
-Total_Energy = Area under skeleton curve
-D_yield = 2 × Total_Energy / F_peak
-μ = D_peak / D_yield
-```
+$$
+\text{Total Energy} = \text{Area under skeleton curve}
+$$
+
+$$
+D*_{yield} = \frac{2 \times \text{Total Energy}}{F_{peak}}
+$$
+
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+
+Where,
+
+ $\text{Total Energy}$ - Total energy dissipation;
+
+$D_{yield}$ — Yield displacement;
+
+*$D_*{peak}$ — Peak displacement;
+
+ $F_{peak}$ — Peak load;
+
+ $\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Energy-based (physically meaningful)
 - Accounts for overall behavior
 
 **Cons**:
+
 - May give higher values than geometric
 - Sensitive to curve shape
 
 **Typical Range**: 3-8
+
+
 
 #### 3. Park Method
 
 **Definition**: Stiffness degradation to 1/3 of initial
 
 **Calculation**:
-```
-K_initial = Initial slope
-K_yield = K_initial / 3
-Find point where current stiffness = K_yield
-μ = D_peak / D_yield
-```
+$$
+K_{initial} = \text{Initial slope of skeleton curve}
+$$
+
+$$
+K_{yield} = \frac{K_{initial}}{3}
+$$
+
+$$
+\text{Find displacement $D_{yield}$ where current stiffness equals $K_{yield}$}
+$$
+
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+
+Where,
+
+$K_{initial}$ — Initial stiffness;
+
+$K_{yield}$ — Yield stiffness (1/3 of initial);
+
+$D_{yield}$ — Yield displacement;
+
+$D_{peak}$ — Peak displacement;
+
+$\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Based on stiffness degradation
 - Commonly used in seismic research
 - Park & Ang damage model compatibility
@@ -934,23 +558,51 @@ Find point where current stiffness = K_yield
 - Requires clear initial linear region
 - May be conservative
 
-**Reference**: Park, Y.J. & Ang, A.H. (1985)
+**Reference**: Park, Y., & Ang, A. H. ‐S. (1985). Mechanistic Seismic Damage Model for Reinforced Concrete. Journal of Structural Engineering, 111(4), 722–739. [https://doi.org/10.1061/(asce)0733-9445(1985)111:4(722)](https://doi.org/10.1061/(asce)0733-9445(1985)111:4(722))
 
 **Typical Range**: 2-5
+
+
 
 #### 4. Farthest Point Method
 
 **Definition**: Point farthest from line connecting origin to peak
 
 **Calculation**:
-```
-Line: Origin to (D_peak, F_peak)
-For each point, calculate perpendicular distance to line
-D_yield = displacement at maximum distance point
-μ = D_peak / D_yield
-```
+
+Define line from origin $(0, 0)$ to peak point $(D_{peak}, F_{peak})$
+
+For each point $(D_i, F_i)$ on skeleton curve, calculate perpendicular distance:
+$$
+d_i = \frac{|F_{peak} \cdot D_i - D_{peak} \cdot F_i|}{\sqrt{D_{peak}^2 + F_{peak}^2}}
+$$
+
+$$
+D_{yield} = D_i \text {  at } \max(d_i)
+$$
+
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+
+Where,
+
+$D_i$ — Displacement of point $i$;
+
+$F_i$ — Force of point $i$;
+
+$d_i$ — Perpendicular distance from point $i$ to line;
+
+$D_{yield}$ — Yield displacement (at maximum distance);
+
+$D_{peak}$ — Peak displacement;
+
+$F_{peak}$ — Peak force;
+
+$\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Geometric interpretation of yielding
 - Identifies clear transition point
 - Independent of arbitrary thresholds
@@ -961,18 +613,39 @@ D_yield = displacement at maximum distance point
 
 **Typical Range**: 3-7
 
+
+
 #### 5. ASCE Method
 
 **Definition**: Yield at 60% of peak force
 
 **Calculation**:
-```
-F_yield = 0.60 × F_peak
-Find displacement where F = F_yield
-μ = D_peak / D_yield
-```
+$$
+F_{yield} = 0.60 \times F_{peak}
+$$
+
+$$
+\text{Find displacement where } F = F_{yield}
+$$
+
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+
+Where,
+
+$F_{yield}$ — Yield load;
+
+$F_{peak}$ — Peak load;
+
+$D_{yield}$ — Yield displacement;
+
+$D_{peak}$ — Peak displacement;
+
+$\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Based on US seismic codes
 - Standard for ASCE 41 evaluations
 - More conservative than geometric
@@ -981,25 +654,45 @@ Find displacement where F = F_yield
 - Still arbitrary threshold
 - Different from other international codes
 
-**Reference**: ASCE 41-17
+**Reference**: ASCE 41-17 (2017). Seismic Evaluation and Retrofit of Existing Buildings. American Society of Civil Engineers. [https://doi.org/10.1061/9780784414859](https://doi.org/10.1061/9780784414859)
 
 **Typical Range**: 2-5
+
+
 
 #### 6. EEEP (Equivalent Energy Elastic-Plastic)
 
 **Definition**: Bilinear curve with equal energy
 
 **Calculation**:
-```
-Energy_actual = Area under skeleton curve
-Create bilinear curve:
-  - Elastic to (D_yield, F_peak)
-  - Plastic plateau at F_peak to D_peak
-Adjust D_yield until energies match
-μ = D_peak / D_yield
-```
+$$
+E_{actual} = \text{Area under skeleton curve}
+$$
+Construct bilinear curve with:
+
+- Elastic branch: $(0, 0) \to (D_{yield}, F_{peak})$
+- Plastic plateau: $F = F_{peak}$ from $D_{yield}$ to $D_{peak}$
+
+Adjust $D_{yield}$ until: $E_{bilinear} = E_{actual}$
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+Where,
+
+$E_{actual}$ — Energy under actual skeleton curve;
+
+$E_{bilinear}$ — Energy under equivalent bilinear curve;
+
+$D_{yield}$ — Yield displacement (adjusted for energy equivalence);
+
+$D_{peak}$ — Peak displacement;
+
+$F_{peak}$ — Peak force;
+
+$\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Energy equivalence (FEMA standard)
 - Commonly used in performance-based design
 - Accounts for post-yield behavior
@@ -1012,18 +705,39 @@ Adjust D_yield until energies match
 
 **Typical Range**: 3-6
 
+
+
 #### 7. Elastic Yield Method
 
 **Definition**: Intersection of initial stiffness line with peak force
 
 **Calculation**:
-```
-K_initial = Initial elastic slope
-D_yield = F_peak / K_initial
-μ = D_peak / D_yield
-```
+$$
+K_{initial} = \text{Initial elastic slope}
+$$
+
+$$
+D_{yield} = \frac{F_{peak}}{K_{initial}}
+$$
+
+$$
+\mu = \frac{D_{peak}}{D_{yield}}
+$$
+
+Where,
+
+$K_{initial}$ — Initial elastic stiffness;
+
+$F_{peak}$ — Peak force;
+
+$D_{yield}$ — Yield displacement;
+
+$D_{peak}$ — Peak displacement;
+
+$\mu$ — Ductility ratio.
 
 **Pros**:
+
 - Simplest method
 - Based on elastic assumption
 - Clear physical meaning
@@ -1034,6 +748,8 @@ D_yield = F_peak / K_initial
 - Very conservative
 
 **Typical Range**: 1.5-4
+
+
 
 ### Method Comparison Table
 
@@ -1053,6 +769,8 @@ D_yield = F_peak / K_initial
 
 ### Algorithm Selection Guide
 
+*Using the peak point connection method to draw curves can achieve better smoothing results.*
+
 ```
 Need Smoothing?
   ├─ Yes → Primary Goal?
@@ -1071,6 +789,7 @@ Need Smoothing?
 **Mathematical Basis**: Piecewise cubic polynomials with continuous first derivative
 
 **Properties**:
+
 - Shape-preserving (monotonicity maintained)
 - No overshoot between points
 - Local support (changing one point affects only nearby segments)
@@ -1080,10 +799,6 @@ Need Smoothing?
 - Data with monotonic segments
 - When overshoot is unacceptable
 - Structural testing data (physically realistic)
-
-**Parameters**: None (automatic)
-
-**Example Use Case**: Force-displacement data where force shouldn't overshoot between measured points
 
 #### 2. Akima Spline
 
@@ -1098,10 +813,6 @@ Need Smoothing?
 - Data with gentle curves
 - When you want natural smoothness
 - Avoiding oscillations near peaks
-
-**Parameters**: None (automatic)
-
-**Example Use Case**: Smooth presentation of hysteresis loops without artificial oscillations
 
 #### 3. Bézier Curve
 
@@ -1128,8 +839,6 @@ Need Smoothing?
 - Technical reports: 40-60%
 - Data verification: 80-100%
 
-**Example Use Case**: Creating smooth curves for PowerPoint presentations
-
 #### 4. B-spline
 
 **Mathematical Basis**: Basis spline with smoothness parameter
@@ -1143,19 +852,6 @@ Need Smoothing?
 - Need maximum smoothness
 - Acceptable to deviate from exact points
 - Artistic rendering
-
-**Parameters**:
-- Smoothness (s): 0.0-10.0
-  - 0: Closer to interpolation
-  - 5: Moderate smoothing
-  - 10: Very smooth, may deviate
-
-**Recommended Settings**:
-- Technical: s = 0-2
-- General: s = 2-5
-- Artistic: s = 5-10
-
-**Example Use Case**: Smoothing noisy sensor data while maintaining overall trend
 
 #### 5. Savitzky-Golay Filter
 
@@ -1171,24 +867,6 @@ Need Smoothing?
 - Need to preserve peak locations
 - Signal processing applications
 
-**Parameters**:
-- Window Size (odd integer, 3-51)
-  - 3-7: Light smoothing
-  - 9-15: Moderate smoothing
-  - 17+: Heavy smoothing
-
-**Recommended Settings**:
-- Low noise: 5-7
-- Medium noise: 9-13
-- High noise: 15-21
-
-**Caution**: 
-- Window must be odd number
-- Window should be smaller than feature width
-- Very large windows may distort peaks
-
-**Example Use Case**: Filtering electrical noise from load cell data
-
 #### 6. UnivariateSpline
 
 **Mathematical Basis**: Smoothing spline with adjustable parameter
@@ -1202,20 +880,6 @@ Need Smoothing?
 - General-purpose smoothing
 - When you want fine control
 - Default choice for most cases
-
-**Parameters**:
-- Smoothness (s): 0.0-10.0
-  - s=0: Exact interpolation (like CubicSpline)
-  - s=1-3: Light smoothing
-  - s=4-7: Moderate smoothing
-  - s=8-10: Heavy smoothing
-
-**Recommended Settings**:
-- Start with s=1.0
-- Increase if too jagged
-- Decrease if over-smoothed
-
-**Example Use Case**: Standard smoothing for most hysteresis curve presentations
 
 #### 7. CubicSpline
 
@@ -1231,60 +895,6 @@ Need Smoothing?
 - Trust all data points
 - Want smooth derivatives
 
-**Parameters**: None (automatic)
-
-**Caution**: May show oscillations (Runge's phenomenon) with many points
-
-**Example Use Case**: Interpolating sparse but accurate measurement points
-
-### Visual Comparison
-
-```
-Original Data:  ○     ○     ○     ○     ○
-
-PCHIP:         ○─────○─────○─────○─────○
-               (follows closely, no overshoot)
-
-Akima:         ○────○────○────○────○
-               (smooth, natural curves)
-
-Bézier:        ○──○──○──○──○
-(20%)          (very smooth, slight deviation)
-
-B-spline:      ○─○─○─○─○
-(s=5)          (smooth, moderate deviation)
-
-SG Filter:     ○ ○ ○ ○ ○
-(win=7)        (peaks preserved, noise reduced)
-
-UnivSpline:    ○──○──○──○──○
-(s=2)          (balanced smoothness)
-
-CubicSpline:   ○─────○─────○─────○─────○
-               (exact through points, possible wiggles)
-```
-
-### Parameter Tuning Tips
-
-1. **Start Conservative**:
-   - Begin with default/low smoothing
-   - Gradually increase until satisfied
-   - Compare with original data
-
-2. **Use Preview**:
-   - Enable "Show original data points"
-   - Visually verify smoothing quality
-   - Check peak preservation
-
-3. **Match Purpose**:
-   - Research paper: Moderate smoothing (preserve accuracy)
-   - Presentation: Higher smoothing (aesthetics)
-   - Internal analysis: Minimal smoothing (accuracy)
-
-4. **Check Metrics**:
-   - Smoothing shouldn't significantly change calculated metrics
-   - If metrics change >5%, reduce smoothing
-
 ---
 
 ## 📊 Performance Metrics
@@ -1296,113 +906,59 @@ CubicSpline:   ○─────○─────○─────○──�
 ##### Peak Displacement (D<sub>max</sub>)
 
 **Definition**: Maximum absolute displacement reached during test
+$$
+D_{max,positive} = max (displacement)
+$$
 
-**Formula**:
-```
-D_max_positive = max(displacement)
-D_max_negative = min(displacement)
-```
+$$
+D_{max,negative} = min (displacement)
+$$
 
-**Units**: mm
 
-**Significance**:
-- Indicates maximum deformation capacity
-- Critical for deformation-based design
-- Related to damage level
-
-**Typical Values**:
-- Well-confined RC: 50-100 mm (for standard column)
-- Steel frames: 100-300 mm
-- Base isolators: 200-500 mm
 
 ##### Residual Deformation (D<sub>res</sub>)
 
 **Definition**: Permanent displacement after load removal
-
-**Formula**:
-```
-D_res = displacement[final_point]
-```
-
-**Units**: mm
-
-**Significance**:
-- Indicates permanent damage
-- Important for post-earthquake functionality
-- Repair cost indicator
-
-**Typical Values**:
-- Excellent: < 1% of peak displacement
-- Good: 1-5%
-- Moderate: 5-10%
-- Poor: > 10%
+$$
+D_{res} = displacemnet_{\text{final point}}
+$$
 
 #### 2. Mechanical Properties
 
 ##### Peak Load (F<sub>max</sub>)
 
 **Definition**: Maximum force during test
+$$
+F_{max,positive} = max (Force)
+$$
 
-**Formula**:
-```
-F_max_positive = max(force)
-F_max_negative = min(force)
-```
-
-**Units**: kN
-
-**Significance**:
-- Ultimate strength capacity
-- Design force level
-- Safety margin indicator
+$$
+F_{max,negative} = min (Force)
+$$
 
 ##### Initial Stiffness (K<sub>0</sub>)
 
 **Definition**: Slope of initial linear elastic region
-
-**Formula**:
-```
-K_0 = ΔF / ΔD (first ~5-10% of data)
-```
-
-**Units**: kN/mm
-
+$$
+K_0 = ΔF / ΔD \text{ (first ~5-10 percent of data)}
+$$
 **Calculation Method**:
+
 - Take first 5-20 data points (or first 10% of data)
 - Exclude points near zero (noise threshold)
 - Linear regression to find slope
-
-**Significance**:
-- Elastic behavior
-- Uncracked stiffness
-- Theoretical stiffness comparison
-
-**Typical Values**:
-- RC beam: 10-100 kN/mm
-- RC column: 50-300 kN/mm
-- Steel connection: 100-1000 kN/mm
 
 ##### Secant Stiffness (K<sub>sec</sub>)
 
 **Definition**: Slope from origin to peak point
 
-**Formula**:
-```
-K_sec = F_max / D_max
-```
-
-**Units**: kN/mm
-
-**Significance**:
-- Effective stiffness at peak
-- Degraded/cracked stiffness
-- Simplified analysis parameter
-
+$$
+K_{sec} = F_{max} / D_{max}
+$$
 **Relationship**:
-```
-K_sec < K_0 (always, due to damage/yielding)
-Ratio K_sec/K_0 indicates degradation
-```
+
+$K_{sec} < K_{0} (always, due to damage/yielding)
+Ratio $K_{sec}/K_{0}$ indicates degradation
 
 #### 3. Energy Metrics
 
@@ -1411,94 +967,89 @@ Ratio K_sec/K_0 indicates degradation
 **Definition**: Sum of areas enclosed by all hysteresis loops
 
 **Formula**:
-```
-E_total = Σ Area_i (for all loops)
-Area_i = ∮ F dD (line integral)
-```
+$$
+E_{total} = \sum_{i=1}^{n} A_i
+$$
 
-**Calculation Method**:
-```python
-for each loop:
-    area = 0
-    for i in range(len(displacement)-1):
-        area += 0.5*(force[i] + force[i+1])*(displacement[i+1] - displacement[i])
-    total += abs(area)
-```
+$$
+A_i = \oint F \, dD \text{ (line integral for loop } i\text{)}
+$$
 
-**Units**: kN·mm (or kN·m = kJ)
+$$
+A_i = \sum_{j=1}^{m-1} \frac{1}{2}(F_j + F_{j+1})(D_{j+1} - D_j)
+$$
 
-**Significance**:
-- Total energy dissipated
-- Cumulative damage indicator
-- Seismic performance parameter
+Where,
+
+$E_{total}$ — Total hysteresis energy;
+
+$A_i$ — Area of loop $i$;
+
+$n$ — Number of loops;
+
+$F$ — Force;
+
+$D$ — Displacement;
+
+$m$ — Number of data points in loop.
 
 ##### Cumulative Energy Dissipation
 
 **Definition**: Same as total hysteresis loop area
-
-**Formula**: E<sub>cumulative</sub> = E<sub>total</sub>
-
-**Units**: kN·mm
-
-**Use**: Progressive energy dissipation analysis (if time-stamped data)
+$$
+E_{cumulative} = E_{total}
+$$
 
 ##### Average Loop Energy (E<sub>avg</sub>)
 
 **Definition**: Mean energy per loop
+$$
+E_{avg} = \frac{E_{total}}{n_{loops}}
+$$
+Where,
 
-**Formula**:
-```
-E_avg = E_total / n_loops
-```
+$E_{avg}$ — Average loop energy;
 
-**Units**: kN·mm
+$E_{total}$ — Total hysteresis energy;
 
-**Significance**:
-- Average energy dissipation capacity per cycle
-- Comparison between different displacement levels
+$n_{loops}$ — Number of loops.
 
 ##### Maximum Loop Energy (E<sub>max</sub>)
 
 **Definition**: Largest single loop area
+$$
+E_{max} = \max(A_i) \text{ for all } i
+$$
+Where,
 
-**Formula**:
-```
-E_max = max(Area_i) for all i
-```
+$E_{max}$ — Maximum loop energy;
 
-**Units**: kN·mm
-
-**Significance**:
-- Peak energy dissipation capacity
-- Usually occurs at largest displacement cycle
+$A_i$ — Area of loop $i$.
 
 ##### Equivalent Viscous Damping Coefficient (ξ<sub>eq</sub>)
 
 **Definition**: Ratio of dissipated to elastic strain energy
+$$
+\xi_{eq} = \frac{E_{dissipated}}{2\pi \times E_{elastic}}
+$$
 
-**Formula**:
-```
-ξ_eq = E_dissipated / (2π × E_elastic)
+$$
+E_{elastic} = \frac{1}{2} D_{max} F_{max}
+$$
 
-where:
-E_dissipated = Area of hysteresis loop
-E_elastic = Area of triangle (0, 0) to (D_max, F_max)
-           = 0.5 × D_max × F_max (for each direction)
-```
+Where,
+
+$\xi_{eq}$ — Equivalent viscous damping ratio;
+
+$E_{dissipated}$ — Area of hysteresis loop;
+
+$E_{elastic}$ — Elastic strain energy (triangle area);
+
+$D_{max}$ — Maximum displacement;
+
+$F_{max}$ — Maximum force.
 
 **Units**: Dimensionless (often expressed as %)
-
-**Physical Meaning**:
-- Equivalent linear damping ratio
-- Higher = better energy dissipation
-- Used in equivalent linearization
-
-**Typical Values**:
-- Elastic structure: 2-5%
-- Lightly damaged RC: 5-10%
-- Yielded RC/steel: 10-20%
-- Friction devices: 20-40%
-- Good seismic design: > 10%
 
 **Reference**: Often compared to 5% damping (common design assumption)
 
@@ -1507,46 +1058,41 @@ E_elastic = Area of triangle (0, 0) to (D_max, F_max)
 ##### Strength Degradation (SD)
 
 **Definition**: Percentage decrease in force capacity
+$$
+SD_{positive} = \frac{F_{first} - F_{last}}{F_{first}} \times 100\%
+$$
 
-**Formula**:
-```
-SD_positive = (F_first - F_last) / F_first × 100%
-SD_negative = (F_first - F_last) / F_first × 100%
+$$
+SD_{negative} = \frac{F_{first} - F_{last}}{F_{first}} \times 100\%
+$$
 
-where:
-F_first = Peak force in first positive/negative loop
-F_last = Peak force in last positive/negative loop
-```
+Where,
 
-**Units**: %
+$SD_{positive}$ — Strength degradation in positive direction;
 
-**Interpretation**:
-- 0%: No degradation (ideal)
-- <10%: Excellent performance
-- 10-20%: Good performance
-- 20-30%: Moderate degradation
-- >30%: Significant degradation
+$SD_{negative}$ — Strength degradation in negative direction;
 
-**Causes**:
+$F_{first}$ — Peak force in first loop;
 
-- Concrete crushing
-- Reinforcement fracture
-- Bond deterioration
-- Connection failure
+$F_{last}$ — Peak force in last loop.
 
 ##### Stiffness Degradation (KD)
 
 **Definition**: Percentage decrease in stiffness
 
-**Formula**:
-```
-KD = (K_initial - K_secant) / K_initial × 100%
-```
+$$
+KD = \frac{K_{initial} - K_{secant}}{K_{initial}} \times 100\%
+$$
+Where,
 
-**Units**: %
+$KD$ — Stiffness degradation;
+
+$K_{initial}$ — Initial stiffness;
+
+$K_{secant}$ — Secant stiffness.
 
 **Interpretation**:
-- Typical range: 60-95% for ductile elements
+
 - Higher = more damage/yielding
 - Lower = more elastic behavior
 
@@ -1556,30 +1102,9 @@ KD = (K_initial - K_secant) / K_initial × 100%
 
 **Definition**: Ratio of ultimate to yield displacement
 
-**Formula**:
-```
-μ = D_ultimate / D_yield
-```
-
 **Units**: Dimensionless
 
-**Methods**: See [Ductility Methods](#ductility-coefficient-methods) section
-
-**Significance**:
-- Key seismic design parameter
-- Indicates deformation capacity
-- Force reduction factor (R) related: R ≈ √(2μ - 1)
-
-**Target Values** (Seismic Design):
-- Brittle systems: μ < 2
-- Limited ductility: μ = 2-4
-- Moderate ductility: μ = 4-6
-- High ductility: μ > 6
-
-**Code Requirements**:
-- ASCE 7: R factors imply μ = 3-6
-- Eurocode 8: Ductility classes (DCL: μ=1.5, DCM: μ=3, DCH: μ=4.5)
-- Chinese Code: μ ≥ 3 for seismic design
+**Methods**: See [Ductility Methods](#ductility-coefficient-calculation-methods) section
 
 ### Metric Relationships
 
@@ -1594,17 +1119,17 @@ Degradation ← Cumulative Damage
 ### Quality Indicators
 
 Good Seismic Performance:
-- ✓ High ductility (μ > 4)
-- ✓ High energy dissipation
-- ✓ High equivalent damping (> 10%)
-- ✓ Moderate strength degradation (< 20%)
-- ✓ Acceptable residual deformation (< 5% of peak)
+- ✓ High ductility
+- ✓High energy dissipation
+- ✓High equivalent damping 
+- ✓ Moderate strength degradation
+- ✓ Acceptable residual deformation
 
 Poor Performance:
-- ✗ Low ductility (μ < 2)
+- ✗ Low ductility
 - ✗ Low energy dissipation
-- ✗ Severe strength degradation (> 30%)
-- ✗ Large residual deformation (> 10% of peak)
+- ✗ Severe strength degradation
+- ✗ Large residual deformation
 - ✗ Sudden failure (no plateau in skeleton curve)
 
 ---
@@ -1633,505 +1158,6 @@ Poor Performance:
 | **G** | Toggle grid |
 | **L** | Toggle log/linear Y-axis |
 | **K** | Toggle log/linear X-axis |
-
----
-
-## 🔧 Troubleshooting
-
-### Common Issues and Solutions
-
-#### Problem 1: Application Won't Start
-
-**Symptoms**:
-```
-ModuleNotFoundError: No module named 'PySide6'
-```
-
-**Solution**:
-```bash
-pip install PySide6
-# Or install all dependencies:
-pip install -r requirements.txt
-```
-
----
-
-#### Problem 2: File Import Fails
-
-**Symptoms**:
-- Error message: "Data format incorrect"
-- No data appears after import
-
-**Possible Causes & Solutions**:
-
-**A) File has headers**:
-```
-Displacement,Force     ← Header row
-0.00,0.00
-```
-**Solution**: Currently, first row is used as data. Either:
-- Remove header row
-- Tool will attempt to use it (may cause error)
-
-**B) Non-numeric data**:
-```
-0.00,0.00
-0.12,1.23
-N/A,2.45     ← Problem
-```
-**Solution**: Remove rows with non-numeric values
-
-**C) Insufficient columns**:
-```
-0.00     ← Only 1 column
-0.12
-```
-**Solution**: Ensure at least 2 columns (displacement, force)
-
-**D) File encoding issues** (Chinese/Russian characters in path):
-**Solution**: Move file to path without special characters
-
----
-
-#### Problem 3: No Hysteresis Loops Detected
-
-**Symptoms**:
-- Tab 3 shows "No hysteresis loop information"
-- Metrics are incomplete
-
-**Possible Causes & Solutions**:
-
-**A) Data doesn't return to zero**:
-```
-Monotonic loading (no cycles):
-0 → 10 → 20 → 30 ✗
-```
-**Solution**: Hysteresis requires cyclic loading (back and forth)
-
-**B) Insufficient data points**:
-**Solution**: Need at least 20-30 points per cycle
-
-**C) Very small displacement range**:
-**Solution**: Check displacement units (should be mm, not m)
-
-**D) All same displacement level**:
-**Solution**: Need multiple displacement levels to detect peaks
-
----
-
-#### Problem 4: Skeleton Curve Looks Wrong
-
-**Symptoms**:
-- Curve is jagged or has unexpected jumps
-- Missing portions of curve
-- Too many or too few points
-
-**Solutions**:
-
-**Try Method 2 if using Method 1**:
-- Switch to "Peak Points" method
-- May better capture your loading protocol
-
-**Check data filtering**:
-- Disable "first loop only" to see all data
-- May reveal repeated cycles causing issues
-
-**Verify data quality**:
-- Check for outliers in original data
-- Look for sensor errors or data transmission issues
-
-**Adjust threshold** (future feature):
-- Currently automatic
-- Very dense data may need higher thresholds
-
----
-
-#### Problem 5: Smoothing Creates Artifacts
-
-**Symptoms**:
-- Oscillations or waves in smooth curve
-- Overshoot beyond original data
-- Unnatural-looking curves
-
-**Solutions**:
-
-**A) Switch algorithms**:
-```
-If using: CubicSpline (oscillations)
-Try: PCHIP or Akima (shape-preserving)
-```
-
-**B) Adjust parameters**:
-```
-If too smooth: Decrease s parameter
-If too jagged: Increase s parameter
-If overshooting: Use PCHIP instead
-```
-
-**C) Reduce interpolation points**:
-```
-Change from 1000 to 300 points
-May reduce computational artifacts
-```
-
-**D) Use Savitzky-Golay for noisy data**:
-```
-Window size: Start with 7, adjust up/down
-Preserves peaks while smoothing
-```
-
----
-
-#### Problem 6: Metrics Seem Incorrect
-
-**Symptoms**:
-- Ductility > 100 or < 1
-- Negative stiffness
-- Extremely large/small values
-
-**Check These**:
-
-**A) Units**:
-```
-Displacement should be mm (not m)
-Force should be N (not kN)
-```
-
-**B) Data quality**:
-
-```
-Check for:
-- Duplicate points
-- Reversed loading (time not sorted)
-- Sensor drift or offset
-```
-
-**C) Method appropriateness**:
-```
-Try different ductility calculation method
-Results can vary 20-50% between methods
-```
-
-**D) Loading protocol**:
-```
-Some methods require specific loading patterns
-Ensure complete cycles to origin
-```
-
----
-
-#### Problem 7: Chinese/Russian Characters Don't Display
-
-**Symptoms**:
-- Boxes or question marks instead of characters
-- Garbled text
-
-**Solutions**:
-
-**Windows**:
-```
-Install fonts:
-- Microsoft YaHei (Chinese)
-- SimHei (Chinese, alternative)
-- Arial or Segoe UI (Russian)
-```
-
-**Mac**:
-```
-Install:
-- PingFang SC (Chinese)
-- Arial or Helvetica (Russian)
-```
-
-**Linux**:
-```bash
-sudo apt install fonts-wqy-microhei  # Chinese
-sudo apt install fonts-liberation    # Russian
-```
-
-**Matplotlib config** (automatic in code):
-```python
-plt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans']
-```
-
----
-
-#### Problem 8: Graph is Slow or Laggy
-
-**Symptoms**:
-- Delayed response when zooming
-- Slow rendering
-
-**Solutions**:
-
-**A) Reduce interpolation points**:
-```
-Change from 1000 to 300 or even 200
-Still looks smooth for most purposes
-```
-
-**B) Use simpler algorithm**:
-```
-PCHIP or Akima are faster than Bézier
-```
-
-**C) Disable "Show original points"**:
-```
-Uncheck option when using smoothing
-Reduces number of plotted elements
-```
-
-**D) Close other applications**:
-
-```
-Matplotlib uses system resources
-Free up RAM and CPU
-```
-
----
-
-#### Problem 9: Can't Export Graph
-
-**Symptoms**:
-
-- Save button doesn't work
-- Error when saving
-
-**Solutions**:
-
-**A) Check write permissions**:
-
-```
-Try saving to Desktop or Documents
-Avoid system protected folders
-```
-
-**B) Use toolbar save**:
-```
-Click toolbar disk icon (💾)
-Choose format: PNG, PDF, SVG
-```
-
-**C) Alternative - Screenshot**:
-```
-Windows: Snipping Tool or Win+Shift+S
-Mac: Cmd+Shift+4
-```
-
----
-
-#### Problem 10: Undo Doesn't Work
-
-**Note**: Undo only works for file operations (add/remove files)
-
-**Does NOT undo**:
-- Settings changes (method selection)
-- Graph zoom/pan
-- Smoothing parameter adjustments
-
-**To reset analysis**:
-- Reselect the file from list
-- Close and reopen application
-
----
-
-### Getting Help
-
-If problems persist:
-
-1. **Check data format**: Use examples in this README
-3. **Update packages**: `pip install --upgrade PySide6 matplotlib scipy`
-3. **Python version**: Ensure 3.7+
-
----
-
-## 💼 Example Workflows
-
-### Workflow 1: Standard Cyclic Test Analysis
-
-**Scenario**: You've just completed a cyclic loading test on a reinforced concrete column
-
-**Steps**:
-
-1. **Export test data** to CSV:
-   ```
-   Time, Displacement_mm, Force_kN
-   0.00, 0.00, 0.00
-   0.01, 0.12, 1.45
-   ...
-   ```
-
-2. **Open application**:
-   ```bash
-   python HysAnalysis_MultiLang.py
-   ```
-
-3. **Import file**:
-   - Click "Import"
-   - Select your CSV file
-   - Appears in file list
-
-4. **Initial analysis** (automatic):
-   - Click filename
-   - Default settings applied:
-     * Method 1 (Outer Envelope)
-     * Both directions
-     * Geometric ductility
-     * Dot-line plot
-
-5. **Review results**:
-   - **Tab 1**: Check curve shape
-   - **Tab 2**: Note peak load, ductility
-   - **Tab 3**: Count loops, check energy
-
-6. **Apply filtering** (if needed):
-   - Enable "first loop only" if repeated cycles
-   - Analysis updates automatically
-
-7. **Create presentation graph**:
-   - Select "Spline Connected Graph"
-   - Choose "PCHIP" algorithm
-   - Uncheck "Show original points"
-   - Adjust interpolation to 500 points
-
-8. **Export**:
-   - Click toolbar save icon
-   - Save as PNG (presentation) or PDF (publication)
-
-9. **Copy metrics**:
-   - Go to Tab 2
-   - Ctrl+A, Ctrl+C
-   - Paste into report document
-
-**Estimated Time**: 5 minutes
-
----
-
-### Workflow 2: Comparing Multiple Specimens
-
-**Scenario**: You tested 3 identical specimens and want to compare
-
-**Steps**:
-
-1. **Import all files**:
-   ```
-   - Specimen_A.txt
-   - Specimen_B.txt
-   - Specimen_C.txt
-   ```
-
-2. **Analyze each**:
-   - Click Specimen_A
-   - Copy metrics from Tab 2 → Spreadsheet row 1
-   - Save graph → "Specimen_A_curve.png"
-   - Repeat for B and C
-
-3. **Consistency check**:
-   - Use same settings for all (important!)
-   - Same ductility method
-   - Same skeleton extraction method
-
-4. **Create comparison table**:
-   ```
-   Metric          | Specimen A | Specimen B | Specimen C | Average
-   ----------------|------------|------------|------------|--------
-   Peak Load (kN)  |    67.5    |    65.2    |    69.1    |  67.3
-   Ductility       |     4.2    |     3.9    |     4.5    |   4.2
-   Energy (kN·mm)  |   4521     |   4102     |   4788     | 4470
-   ...
-   ```
-
-5. **Statistical analysis** (external):
-   - Export metrics to Excel
-   - Calculate mean, std dev, COV
-   - Check for outliers
-
-**Estimated Time**: 15 minutes for 3 specimens
-
----
-
-### Workflow 3: Parametric Study of Ductility Methods
-
-**Scenario**: Research on how different ductility definitions affect results
-
-**Steps**:
-
-1. **Load test data**
-
-2. **Create result matrix**:
-   ```
-   Method          | μ_positive | μ_negative | Notes
-   ----------------|------------|------------|-------
-   Geometric       |            |            |
-   Energy          |            |            |
-   Park            |            |            |
-   Farthest        |            |            |
-   ASCE            |            |            |
-   EEEP            |            |            |
-   Elastic Yield   |            |            |
-   ```
-
-3. **For each method**:
-   - Select ductility method radio button
-   - Wait for analysis update
-   - Copy ductility values from Tab 2
-   - Paste into matrix
-
-4. **Analysis**:
-   - Calculate range: (max - min)
-   - Calculate coefficient of variation
-   - Identify most conservative method
-   - Identify method closest to code intent
-
-5. **Visualization** (external):
-   - Create bar chart comparing methods
-   - Show ±1 std dev error bars if multiple specimens
-
-**Estimated Time**: 10 minutes
-
----
-
-### Workflow 4: Performance-Based Design Verification
-
-**Scenario**: Checking if design meets ASCE 41 requirements
-
-**Steps**:
-
-1. **Load test data**
-
-2. **Configure for ASCE compliance**:
-   - Skeleton: Method 1 (Outer Envelope)
-   - Ductility: ASCE Method
-   - Direction: Both
-
-3. **Extract target values** from Tab 2:
-   ```
-   ✓ Ductility coefficient: μ = 4.2
-   ✓ Equivalent damping: ξ = 0.18 (18%)
-   ✓ Residual drift: 2.3 mm (3% of peak)
-   ```
-
-4. **Compare to ASCE 41 criteria**:
-   ```
-   Criteria           | Required | Achieved | Status
-   -------------------|----------|----------|--------
-   Ductility          |   ≥ 3.0  |   4.2    |   ✓
-   Equivalent damping |   ≥ 10%  |   18%    |   ✓
-   Residual drift     |   < 5%   |    3%    |   ✓
-   Strength degradation| < 20%   |   12%    |   ✓
-   ```
-
-5. **Generate compliance report**:
-   - Export graph showing skeleton curve
-   - Copy metrics table
-   - Document test setup
-   - Include in design documentation
-
-6. **Acceptance**:
-   - All criteria met → Design validated
-   - If any fail → Redesign required
-
-**Estimated Time**: 20 minutes (including documentation)
 
 ---
 
@@ -2466,35 +1492,6 @@ We welcome contributions!
    - Make changes
    - Submit pull request
 
-### Development Setup
-
-```bash
-# Clone repository
-git clone [https://github.com/GarGarfie/HysAnalysis]
-cd HysAnalysis
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run tests (if available)
-python -m pytest
-
-# Run application
-python HysAnalysis.py
-```
-
-
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
 ---
 
 ## 📚 Citation
@@ -2526,32 +1523,9 @@ This tool uses the following open-source libraries:
 
 ---
 
-## 📅 Version History
+**[⬆ Back to Top](#force-displacement-hysteresis-curve-analysis-tool)**
 
-**Version 1.0.0** (December 2025)
-- Initial release
-- Multi-language support (EN, ZH, RU)
-- 7 smoothing algorithms
-- 7 ductility methods
-- Comprehensive metric calculations
-- Interactive plotting
-
-**Planned Features**:
-- Data export to CSV/Excel
-- Batch processing mode
-- Customizable metric formulas
-- Additional smoothing algorithms
-- Video tutorials
-
----
-
-<div align="center">
-**[⬆ Back to Top](#-force-displacement-hysteresis-curve-analysis-tool)**
 
 ---
 
 Made with ❤️ for the structural engineering community
-
-
-
-</div>
