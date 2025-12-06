@@ -1243,25 +1243,9 @@ A: Partially:
 
 ---
 
-**Q5: Which ductility method should I use?**
-
-A: Depends on context:
-
-| Context | Recommended Method | Reason |
-|---------|-------------------|--------|
-| General research | Geometric | Simple, widely used |
-| Seismic design (US) | ASCE | Code compliance |
-| Energy dissipation study | Energy or EEEP | Physically meaningful |
-| Damage assessment | Park | Stiffness-based |
-| Conservative estimate | Elastic Yield | Lowest values |
-
-When in doubt: Report **Geometric** AND **EEEP** methods
-
----
-
 ### Technical Questions
 
-**Q6: Why do different smoothing algorithms give different results?**
+**Q5: Why do different smoothing algorithms give different results?**
 
 A: Algorithms have different mathematical properties:
 - Some preserve peaks (SG filter, PCHIP)
@@ -1274,7 +1258,7 @@ For presentation: Use Bézier with moderate settings
 
 ---
 
-**Q7: My ductility values differ from hand calculations. Why?**
+**Q6: My ductility values differ from hand calculations. Why?**
 
 A: Common reasons:
 1. **Different yield point definition**: Your method vs. software method
@@ -1288,7 +1272,7 @@ To verify:
 
 ---
 
-**Q8: Can I export numerical data (not just graphs)?**
+**Q7: Can I export numerical data (not just graphs)?**
 
 A: Currently:
 - Graphs: Yes (PNG, PDF, SVG via toolbar)
@@ -1304,7 +1288,7 @@ Future feature: Direct CSV/Excel export planned
 
 ---
 
-**Q9: Does the tool account for P-Delta effects?**
+**Q8: Does the tool account for P-Delta effects?**
 
 A: No. Tool analyzes data as-is.
 - If your test data includes P-Delta, results reflect total behavior
@@ -1313,24 +1297,7 @@ A: No. Tool analyzes data as-is.
 
 ---
 
-**Q10: How is equivalent viscous damping calculated?**
-
-A: Formula:
-```
-ξ_eq = E_dissipated / (4π × E_elastic)
-
-where:
-E_dissipated = Area of largest hysteresis loop
-E_elastic = 0.5 × D_max × F_max × 2 (both directions)
-```
-
-Matches ASCE 7 and most seismic codes
-
-Note: Some references use 2π instead of 4π (convention difference)
-
----
-
-**Q11: Can I analyze tests with asymmetric loading?**
+**Q9: Can I analyze tests with asymmetric loading?**
 
 A: Yes:
 - Tool handles positive and negative directions independently
@@ -1340,7 +1307,7 @@ A: Yes:
 
 ---
 
-**Q12: What if my test started at pre-load (not zero)?**
+**Q10: What if my test started at pre-load (not zero)?**
 
 A: Tool auto-adjusts:
 - Detects first "loading" point
@@ -1356,7 +1323,7 @@ If adjustment is incorrect:
 
 ### Data Questions
 
-**Q13: My data file has 3+ columns. Which are used?**
+**Q11: My data file has 3+ columns. Which are used?**
 
 A: Only first two columns:
 - Column 1: Displacement
@@ -1367,7 +1334,7 @@ Ensure correct column order in your file
 
 ---
 
-**Q14: Can I import data from ABAQUS/ANSYS/SAP2000?**
+**Q12: Can I import data from ABAQUS/ANSYS/SAP2000?**
 
 A: If you export to CSV/TXT format, yes:
 
@@ -1396,7 +1363,7 @@ Then import the exported file
 
 ---
 
-**Q15: My test was in inches and kips. Do I need to convert?**
+**Q13: My test was in inches and kips. Do I need to convert?**
 
 A: Recommended: Yes, convert to mm and N
 
@@ -1415,7 +1382,7 @@ Conversion:
 
 ### Error Questions
 
-**Q16: I get "Smoothing interpolation failed". What to do?**
+**Q14: I get "Smoothing interpolation failed". What to do?**
 
 A: This means the algorithm couldn't process your data
 
@@ -1429,7 +1396,7 @@ If persists: Your data may have structure incompatible with that algorithm
 
 ---
 
-**Q17: Why are there no hysteresis loops detected?**
+**Q15: Why are there no hysteresis loops detected?**
 
 A: Requirements for loop detection:
 1. Data must have "peaks" (local maxima)
@@ -1448,7 +1415,7 @@ View Tab 1 graph to visually inspect
 
 ### Usage Questions
 
-**Q18: Can I use this tool for my thesis/publication?**
+**Q16: Can I use this tool for my thesis/publication?**
 
 A: Yes! This is open-source software
 
@@ -1465,7 +1432,7 @@ Also mention:
 
 ---
 
-**Q19: Can I modify the code?**
+**Q17: Can I modify the code?**
 
 A: Yes, it's open-source
 
@@ -1476,18 +1443,6 @@ Common modifications:
 - Integrate with other tools
 
 If you improve it, consider contributing back!
-
----
-
-**Q20: Is there a video tutorial?**
-
-A: Not yet, but planned
-
-Meanwhile:
-- This README is comprehensive
-- Follow Quick Start for basics
-- Try Example Workflows
-- Experiment with sample data
 
 ---
 
