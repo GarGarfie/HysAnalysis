@@ -1385,8 +1385,8 @@ $K_{secant}$ — 割线刚度。
 
 请引用为：
 ```
-[肖松]. (2025). HysAnalysis. 力-位移滞回曲线分析工具。
-GitHub仓库：[https://github.com/GarGarfie/HysAnalysis]
+[S. Xiao]. (2025). HysAnalysis. Force-Displacement Hysteresis Curve Analysis Tool. 
+GitHub repository: [https://github.com/GarGarfie/HysAnalysis]
 ```
 
 还要提及：
@@ -1445,8 +1445,8 @@ GitHub仓库：[https://github.com/GarGarfie/HysAnalysis]
 
 ```bibtex
 @software{HysAnalysis,
-  author = {[肖松]},
-  title = {力-位移滞回曲线分析工具},
+  author = {[S. Xiao]},
+  title = {Force-Displacement Hysteresis Curve Analysis Tool},
   year = {2025},
   publisher = {GitHub},
   url = {[https://github.com/GarGarfie/HysAnalysis]}
@@ -1471,5 +1471,6 @@ GitHub仓库：[https://github.com/GarGarfie/HysAnalysis]
 **[⬆ 返回顶部](#力-位移滞回曲线分析工具)**
 
 ---
+
 
 用❤️发电
